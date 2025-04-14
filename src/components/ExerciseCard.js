@@ -61,7 +61,17 @@ const ExerciseCard = ({ exercise, onClick, onAddToRoutine }) => {
       <CardContent>
         {/* Exercise Title and Add Button */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
-          <Typography variant="h6" component="h3" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="h3" sx={{ 
+            flexGrow: 1,
+            background: 'linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontWeight: 600,
+            textTransform: 'capitalize',
+            fontSize: '1.1rem',
+            letterSpacing: '0.5px'
+          }}>
             {exercise.name}
           </Typography>
           {onAddToRoutine && (
