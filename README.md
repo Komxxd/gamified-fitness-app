@@ -2,7 +2,12 @@
 
 FitArena is a modern, feature-rich fitness application built with React that helps users discover exercises, create workout routines, and track their fitness journey. With an extensive exercise database and interactive features, FitArena makes fitness accessible and engaging for everyone.
 
-![FitArena Screenshot](screenshot.png)
+![FitArena Screenshot](![image](https://github.com/user-attachments/assets/788e25e9-3e17-46f8-a708-15a172782bb5)
+)
+
+## 💪 Website
+
+https://fitarena-workout.netlify.app/
 
 ## ✨ Features
 
@@ -27,7 +32,7 @@ FitArena is a modern, feature-rich fitness application built with React that hel
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fitarena.git
+   git clone https:[//github.com/Komxxd/gamified-fitness-app]
    cd fitarena
    ```
 
@@ -80,18 +85,16 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - Exercise data provided by [ExerciseDB](https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb)
 - Video content from [YouTube Search and Download API](https://rapidapi.com/h0p3rwe/api/youtube-search-and-download)
 - Icons from [Material Icons](https://material-ui.com/components/material-icons/)
 
+## 👩‍💻 Teammates
+- Kritika Mishra - (https://github.com/itzkritz)
+- Shreya Ananad - (https://github.com/heheshreya)
+
 ## 📧 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/fitarena](https://github.com/yourusername/fitarena)
+Komal Kumari - komalkumari0999@gmail.com
