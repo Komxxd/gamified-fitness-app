@@ -1,0 +1,83 @@
+.category-exercises-container {
+  background: #0A0B1A;
+  min-height: calc(100vh - var(--nav-height));
+  padding: calc(var(--nav-height) + 2rem) 2rem 4rem;
+  position: relative;
+}
+
+.category-exercises-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(94, 66, 244, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 66, 165, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(66, 133, 244, 0.03) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.category-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: white !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 2rem !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-title {
+  color: white !important;
+  font-weight: 800 !important;
+  font-size: clamp(2rem, 4vw, 2.5rem) !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.exercises-count {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1.1rem !important;
+}
+
+.exercises-grid {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .category-exercises-container {
+    padding-top: calc(var(--nav-height) + 1.5rem);
+  }
+
+  .category-title {
+    font-size: 1.8rem !important;
+  }
+
+  .exercises-count {
+    font-size: 1rem !important;
+  }
+} 
