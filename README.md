@@ -2,8 +2,8 @@
 
 FitArena is a modern, feature-rich fitness application built with React that helps users discover exercises, create workout routines, and track their fitness journey. With an extensive exercise database and interactive features, FitArena makes fitness accessible and engaging for everyone.
 
-![FitArena Screenshot](![image](https://github.com/user-attachments/assets/788e25e9-3e17-46f8-a708-15a172782bb5)
-)
+![image](https://github.com/user-attachments/assets/8ecd8af8-c453-4950-8355-8e4a3f0ba02c)
+
 
 ## 💪 Website
 
