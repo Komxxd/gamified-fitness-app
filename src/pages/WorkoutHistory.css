@@ -1,0 +1,301 @@
+.workout-history-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a full-width background wrapper */
+.workout-history-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0b1a 0%, #141832 100%);
+  z-index: -10;
+  overflow: hidden;
+}
+
+.workout-history-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000, #0b0e2b, #1e1f29, #000000);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: -2;
+}
+
+.workout-history-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(94, 66, 244, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(255, 66, 165, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(66, 133, 244, 0.15) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Remove the background from the container */
+.workout-history-container::before,
+.workout-history-container::after {
+  display: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.workout-history-header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.back-button {
+  margin-bottom: 1rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.back-button:hover {
+  color: white !important;
+  transform: translateX(-4px);
+}
+
+.page-title {
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.empty-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.empty-icon {
+  font-size: 4rem !important;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 1rem;
+}
+
+.empty-title {
+  color: white !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.empty-subtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 2rem !important;
+}
+
+.start-workout-button {
+  background: linear-gradient(135deg, #5e42f4, #42a5ff) !important;
+  border: none !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(94, 66, 244, 0.3) !important;
+}
+
+.start-workout-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(94, 66, 244, 0.4) !important;
+  background: linear-gradient(135deg, #4e32e4, #3295ef) !important;
+}
+
+.workout-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.workout-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.workout-card-content {
+  padding: 1.5rem !important;
+}
+
+.workout-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.workout-card-title-section {
+  flex: 1;
+}
+
+.workout-title {
+  color: white !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.workout-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.workout-chip {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  font-weight: 500 !important;
+}
+
+.workout-chip.date {
+  background: rgba(94, 66, 244, 0.2) !important;
+}
+
+.workout-chip.duration {
+  background: rgba(66, 165, 255, 0.2) !important;
+}
+
+.workout-chip.xp {
+  background: rgba(255, 66, 165, 0.2) !important;
+}
+
+.expand-button {
+  color: rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.expand-button:hover {
+  color: white !important;
+  transform: scale(1.1) !important;
+}
+
+.workout-details {
+  margin-top: 1rem;
+}
+
+.workout-divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.exercises-title {
+  color: white !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.exercises-list {
+  padding: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.exercise-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 0.75rem !important;
+  padding: 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.exercise-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.exercise-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exercise-name {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  text-transform: capitalize;
+}
+
+.exercise-stats {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.exercise-chip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.exercise-chip.sets {
+  background: rgba(94, 66, 244, 0.1) !important;
+}
+
+.exercise-chip.reps {
+  background: rgba(66, 165, 255, 0.1) !important;
+}
+
+.exercise-chip.xp {
+  background: rgba(255, 66, 165, 0.1) !important;
+}
+
+.workout-notes {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.notes-title {
+  color: white !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 1rem !important;
+}
+
+.notes-content {
+  color: rgba(255, 255, 255, 0.7) !important;
+  white-space: pre-line;
+} 

@@ -1,0 +1,318 @@
+.workout-session-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: var(--nav-height);
+  min-height: calc(100vh - var(--nav-height));
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a full-width background wrapper */
+.workout-session-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0b1a 0%, #141832 100%);
+  z-index: -10;
+  overflow: hidden;
+}
+
+.workout-session-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000, #0b0e2b, #1e1f29, #000000);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: -2;
+}
+
+.workout-session-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(94, 66, 244, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(255, 66, 165, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(66, 133, 244, 0.15) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Remove the background from the container */
+.workout-session-container::before,
+.workout-session-container::after {
+  display: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.workout-session-header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.back-button {
+  margin-bottom: 1rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.back-button:hover {
+  color: white !important;
+  transform: translateX(-4px);
+}
+
+.workout-session-info {
+  margin-bottom: 2rem;
+}
+
+.workout-title {
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.workout-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.duration-chip {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+}
+
+.complete-workout-button {
+  background: linear-gradient(135deg, #42a5ff, #5e42f4) !important;
+  border: none !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(94, 66, 244, 0.3) !important;
+}
+
+.complete-workout-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(94, 66, 244, 0.4) !important;
+  background: linear-gradient(135deg, #3295ef, #4e32e4) !important;
+}
+
+.exercises-list {
+  padding: 0 !important;
+}
+
+.exercise-accordion {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  margin-bottom: 1rem !important;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.exercise-summary {
+  padding: 1rem 1.5rem !important;
+}
+
+.exercise-name {
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  color: white !important;
+  text-transform: capitalize;
+}
+
+.progress-chip {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 20px !important;
+  font-weight: 500 !important;
+}
+
+.progress-chip.completed {
+  background: linear-gradient(135deg, #42a5ff, #5e42f4) !important;
+  color: white !important;
+}
+
+.exercise-progress {
+  margin-top: 0.5rem !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.exercise-progress .MuiLinearProgress-bar {
+  background: linear-gradient(90deg, #42a5ff, #5e42f4) !important;
+}
+
+.exercise-details {
+  padding: 0 1.5rem 1.5rem !important;
+}
+
+.exercise-subtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 1rem !important;
+  font-size: 0.9rem !important;
+}
+
+.sets-list {
+  padding: 0 !important;
+}
+
+.set-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  margin-bottom: 0.75rem !important;
+  padding: 0 !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.set-item.completed {
+  background: rgba(94, 66, 244, 0.1);
+  border: 1px solid rgba(94, 66, 244, 0.2);
+}
+
+.set-content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.set-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.set-number {
+  font-weight: 600 !important;
+  color: white !important;
+}
+
+.set-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer-button {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease !important;
+}
+
+.timer-button:hover {
+  color: white !important;
+  transform: scale(1.1) !important;
+}
+
+.set-checkbox {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.set-checkbox-label {
+  color: white;
+  margin: 0 !important;
+}
+
+.set-divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  margin: 0.5rem 0 !important;
+}
+
+.set-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.weight-input, .reps-input {
+  flex: 1;
+}
+
+.input-label {
+  font-size: 0.8rem !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.weight-field, .reps-field {
+  width: 100%;
+}
+
+.weight-field input, .reps-field input {
+  color: white !important;
+}
+
+/* Timer Dialog Styles */
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.timer-display {
+  font-size: 4rem !important;
+  font-weight: 700 !important;
+  margin: 1rem 0 !important;
+  color: white !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.timer-slider {
+  width: 100%;
+  margin: 1rem 0 2rem !important;
+}
+
+.timer-controls {
+  width: 100%;
+  justify-content: center;
+}
+
+.timer-button.start {
+  background: linear-gradient(135deg, #42a5ff, #5e42f4) !important;
+  border: none !important;
+}
+
+.timer-button.pause {
+  background: linear-gradient(135deg, #ff42a5, #f4425e) !important;
+  border: none !important;
+}
+
+.timer-button.reset {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+} 
